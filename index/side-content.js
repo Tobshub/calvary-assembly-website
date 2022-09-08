@@ -13,7 +13,7 @@ class LinkDIV {
 }
 
 function changeURL(dir) {
-  window.location = `./${dir}.html`;  
+  window.location = `./index/${dir}.html`;  
 }
 
 const eventsDiv = new LinkDIV(document.getElementById('events'));
