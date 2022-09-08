@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue&family=Montserrat&display=swap');
+
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --text-color-100: hsl(0 0% 100%);
+  --text-color-highlight: hsl(0 89% 47%);
+  --text-color-80: hsl(0 0% 95%);
+  --rccg-green: hsl(133, 100%, 27%);
+  --rccg-red: hsl(0, 81%, 51%);
+  --nav-bg: hsl(0 0% 40% / .2);
+  --nav-item-bg: hsl(0 0% 0% /.05);
+  --anchor-slider-color-100: hsl(0 0% 0% / .3); 
+  --side-panel-bg: hsl(0 0% 100%)
+}
+
+body {
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+@media (min-width: 1200px) {
+
+  body {
+    background: url(../images/c-a\ landing\ background.png) no-repeat;
+    background-size: 100%;
+    cursor: default;
+  }
+
+  .background-darken  {
+    width: 100%;
+    height: 100vh;
+    background-color: hsl(0 0% 0% / .35);
+    z-index: -1;
+    position: absolute;
+  }
+
+  .side-panel {
+    --width: 0;
+    height: 100vh;
+    width: calc( var(--width) * 1vw );
+    padding: calc( (var(--width) / var(--width)) * 2em );
+    background-color: var(--side-panel-bg);
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    z-index: 200;
+    right: 0;
+    transition-property: width padding;
+    transition-duration: 350ms;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+  }
+
+  .side-panel > h2 {
+    width: 100%;
+    text-align: left;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-size: 2.25em;
+  }
+
+  #church-location-img {
+    width: 100%;
+  }
+
+  #panel-open {
+    scale: 2;
+    cursor: pointer;
+    position: absolute;
+    right: 2em;
+  }
+
+  #panel-close {
+    cursor: pointer;
+    scale: 2;
+  }
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100vw;
+    height: fit-content;
+    padding: 1em 1em 0;
+  }
+
+  .nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 3.5em;
+    gap: 8em;
+    position: relative;
+    background: var(--nav-bg);
+    color: var(--text-color-100);
+  }
+
+  .logo {
+    width: 4em;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-100%);
+    transition: scale 300ms linear;
+    border-radius: 50%;
+  }
+  .logo:hover {
+    cursor: pointer;
+    scale: 1.1;
+  }
+
+  .left-nav, .right-nav {
+    display: flex;
+    gap: .25em;
+  }
+
+  .nav-item {
+    padding: .25em .5em;
+    font-size: .95em;
+    cursor: pointer;
+    position: relative;
+    border-radius: 10px;
+    transition: scale 400ms ease;
+  }
+  
+  .nav-item > a, .nav-item > a:visited {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .nav-item:hover {
+    scale: 1.1;
+  }
+
+  .nav-item::before {
+    content: '';
+    pointer-events: none;
+    width: 0;
+    margin-left: 50%;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    bottom: -0.25em;
+    background-color: var(--text-color-100);
+    transition: 350ms ease-out;
+  }
+
+  .nav-item:hover::before {
+    width: 100%;
+    margin-left: 0;
+  }
+
+
+  .landing-page {
+    width: 100%;
+    height: 85vh;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .landing-page> * {
+    width: fit-content;
+  }
+
+  .main-subtitle {
+    color: var(--text-color-80);
+    letter-spacing: .75em;
+    font-size: 2em;
+    font-weight: bold;
+    transition: letter-spacing 800ms ease-in;
+    font-family: 'Epilogue', Arial, Helvetica, sans-serif;
+  }
+  .main-title {
+    color: var(--text-color-100);
+    font-size: 3.25em;
+    text-transform: uppercase;
+    margin: .25em 0;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  }
+
+  .main-body {
+    color: var(--text-color-80);
+    text-align: center;
+    font-size: 1.25em;
+  }
+  .main-body span {
+    color: var(--text-color-highlight);
+    font-weight: bold;
+    transition: color 1000ms ease-in;
+  }
+
+  .secondary-anchors {
+    background-color: var(--text-color-100);
+    height: fit-content;
+    width: 100%;
+    padding: 2em;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .side-content {
+    position: relative;
+    width: 25vw;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: scale 250ms linear;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .side-content:hover, .side-content:focus {
+    scale: 1.1;
+  }
+
+  .side-content>.slider-animation {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: var(--anchor-slider-color-100);
+    z-index: -1;
+    transition: width 200ms ease;
+  }
+
+  .side-content:hover>.slider-animation {
+    width: 100%;
+  }
+
+  .side-content>.focus-text {
+    color: var(--text-color-100);
+    font-size: 1.6em;
+    font-weight: bold;
+  }
+
+  #events {
+    background-image: url('../images/pastor\ nseabasi\ praying.jpg');
+  }
+  #join-online {
+    background-image: url('../images/choir\ with\ sis\ esther\ in\ focus.jpg');
+  }
+  #mission {
+    background-image: url('../images/pastor\ cyril\ with\ pastor\ esan\ in\ bg.jpg');
+  }
+}
