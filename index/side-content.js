@@ -2,11 +2,19 @@
 class LinkDIV {
   constructor(elem){
     this.name = elem.id;
-    elem.addEventListener('click', this.onClick);
+    elem.addEventListener('click', ()=>this.onClick(this.name));
+    elem.addEventListener('focus', ()=>{
+      window.addEventListener('keypress', e=>{
+        if(e.code == 'Enter' &&
+          document.activeElement.id == this.name){
+          this.onClick(this.name);
+        }
+      }, {once: true})
+    })
   }
 
-  onClick() {
-    changeURL(this.id);
+  onClick(val) {
+    changeURL(val);
   }
 
   

@@ -5,3 +5,11 @@ function goToRCCG() {
 }
 
 rccgLogo.addEventListener('click', goToRCCG);
+rccgLogo.addEventListener('focus', ()=>{
+  window.addEventListener('keypress', e=>{
+    if(e.code == 'Enter' && 
+      document.activeElement == rccgLogo){
+      goToRCCG();
+    }
+  }, {once: true});
+})

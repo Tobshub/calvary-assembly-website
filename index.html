@@ -16,17 +16,19 @@
   
   
   <header>
-    <nav class="nav-bar">
-      <img src="./images/rccg-logo.png" alt="rccg-logo" class="logo" id="rccg-logo">
+    <nav class="nav-bar josefin-font">
+      <img src="./images/rccg-logo.png" alt="rccg-logo" class="logo" id="rccg-logo" tabindex="0">
       <div class="left-nav">
         <div class="nav-item">
           <a href="#">Home</a>
         </div>
         <div class="nav-item">
           <a href="#">Who We Are</a>
+          <div class="nav-dropdown"></div>
         </div>
         <div class="nav-item">
           <a href="#">What We Do</a>
+          <div class="nav-dropdown"></div>
         </div>
       </div>
       <div class="right-nav">
@@ -35,36 +37,39 @@
         </div>
         <div class="nav-item">
           <a href="#">Media Resources</a>
+          <div class="nav-dropdown"></div>
         </div>
         <div class="nav-item">
           <a href="#">Quick Links</a>
+          <div class="nav-dropdown"></div>
         </div>
       </div>
-      <span class="material-symbols-outlined" id="panel-open">
+      <span class="material-symbols-outlined" id="panel-open" tabindex="0">
         menu
       </span>
     </nav>
 
     <div class="side-panel" id="side-panel">
-      <span class="material-symbols-outlined" id="panel-close">
+      <span class="material-symbols-outlined" id="panel-close" tabindex="0">
         close
       </span>
-      <h2>Find us</h2>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.603136158836!2d3.4143194679658735!3d6.444973443958821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8b2eab2e129f%3A0xc3d1a7261150bd7d!2s16%20Biaduo%20St%2C%20Ikoyi%20106104%2C%20Lagos!5e0!3m2!1sen!2sng!4v1662439278705!5m2!1sen!2sng" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" id="church-location-img"></iframe>
+      <h2 class="italic">Where to find us</h2>
+      <h1 class="josefin-font">Calvary Assembly</h1> 
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.603136158836!2d3.4143194679658735!3d6.444973443958821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8b2eab2e129f%3A0xc3d1a7261150bd7d!2s16%20Biaduo%20St%2C%20Ikoyi%20106104%2C%20Lagos!5e0!3m2!1sen!2sng!4v1662439278705!5m2!1sen!2sng" width="500" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" id="church-location-img"></iframe>
     </div>
 
   </header>
 
-  <main class="landing-page">
+  <main class="landing-page section">
     
     <div class="main-content">
-      <span class="main-subtitle">RCCG</span>
-      <h1 class="main-title">Calvary Assembly Ikoyi</h1>
-      <p class="main-body"><i>...to make a people prepared for  <span>the Lord</span> - Luke 1:17b</i></p>
+      <span class="main-subtitle montserrat-font">RCCG</span>
+      <h1 class="main-title barlow-font">Calvary Assembly Ikoyi</h1>
+      <p class="main-body italic">...to make a people prepared for  <span>the Lord</span> - Luke 1:17b</p>
     </div>
   </main>
 
-  <section class="secondary-anchors">
+  <section class="secondary-anchors section">
     
     <div class="side-content" tabindex="0" id="events">
       <div class="slider-animation"></div>
@@ -81,10 +86,11 @@
    
   </section>
 
+
   <script src="./index/logo.js"></script>
   <script src="./index/side-content.js"></script>
   <script src="./index/side-panel.js"></script>
-  <script src="./index/nav-links.js"></script>
+  <script src="./index/navbar.js"></script>
 
 
 

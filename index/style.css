@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Epilogue&family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=EB+Garamond:ital@1&family=Epilogue&family=Josefin+Sans&family=Montserrat&display=swap');
 
 *, *::after, *::before {
   margin: 0;
@@ -6,13 +6,29 @@
   box-sizing: border-box;
 }
 
+.italic {
+  font-family: 'EB Garamond', 'Times New Roman', Times, serif;
+}
+.epilogue-font {
+  font-family: 'Epilogue', Arial, Helvetica, sans-serif;
+}
+.montserrat-font {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+.barlow-font {
+  font-family: 'Barlow', Arial, Helvetica, sans-serif;
+}
+.josefin-font {
+  font-family: 'Josefin Sans', Arial, Helvetica, sans-serif;
+}
+
 :root {
   --text-color-100: hsl(0 0% 100%);
   --text-color-highlight: hsl(0 89% 47%);
-  --text-color-80: hsl(0 0% 95%);
   --rccg-green: hsl(133, 100%, 27%);
   --rccg-red: hsl(0, 81%, 51%);
-  --nav-bg: hsl(0 0% 40% / .2);
+  --nav-bg-lightness: 40;
+  --nav-bg: hsl(0 0% calc(var(--nav-bg-lightness) * 1%) / .9);
   --nav-item-bg: hsl(0 0% 0% /.05);
   --anchor-slider-color-100: hsl(0 0% 0% / .3); 
   --side-panel-bg: hsl(0 0% 100%)
@@ -62,8 +78,13 @@ body {
   .side-panel > h2 {
     width: 100%;
     text-align: left;
-    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-    font-size: 2.25em;
+    font-size: 1.25em;
+  }
+
+  .side-panel > h1 {
+    width: 100%;
+    text-align: left;
+    font-size: 2.125em;
   }
 
   #church-location-img {
@@ -110,7 +131,6 @@ body {
     left: 50%;
     transform: translateX(-100%);
     transition: scale 300ms linear;
-    border-radius: 50%;
   }
   .logo:hover {
     cursor: pointer;
@@ -124,11 +144,23 @@ body {
 
   .nav-item {
     padding: .25em .5em;
-    font-size: .95em;
+    font-size: 1em;
+    font-weight: 500;
     cursor: pointer;
     position: relative;
     border-radius: 10px;
     transition: scale 400ms ease;
+    position: relative;
+  }
+
+  .nav-dropdown {
+    width: 100%;
+    height: 0;
+    background-color: #fff;
+    position: absolute;
+    top: calc(100% + .5em);
+    overflow: hidden;
+    transition: 200ms ease;
   }
   
   .nav-item > a, .nav-item > a:visited {
@@ -174,25 +206,23 @@ body {
   }
 
   .main-subtitle {
-    color: var(--text-color-80);
+    color: var(--text-color-100);
     letter-spacing: .75em;
     font-size: 2em;
     font-weight: bold;
     transition: letter-spacing 800ms ease-in;
-    font-family: 'Epilogue', Arial, Helvetica, sans-serif;
   }
   .main-title {
     color: var(--text-color-100);
-    font-size: 3.25em;
+    font-size: 5em;
     text-transform: uppercase;
-    margin: .25em 0;
-    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    margin: .05em 0;
   }
 
   .main-body {
-    color: var(--text-color-80);
+    color: var(--text-color-100);
     text-align: center;
-    font-size: 1.25em;
+    font-size: 1.75em;
   }
   .main-body span {
     color: var(--text-color-highlight);
@@ -253,5 +283,20 @@ body {
   }
   #mission {
     background-image: url('../images/pastor\ cyril\ with\ pastor\ esan\ in\ bg.jpg');
+  }
+
+  .welcome {
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 2em;
+  }
+
+  .welcome>.pastor-img {
+    width: 40%;
+  }
+  .welcome-message {
+    width: 60%;
   }
 }
