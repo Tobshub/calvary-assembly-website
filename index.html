@@ -6,17 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calvary Assembly Ikoyi</title>
   <link rel="shortcut icon" href="./images/favicon-32x32.png" sizes="32x32" type="image/x-icon">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" crossorigin="anonymous" />
 
-  <link rel="stylesheet" href="./index/style.css">
+  <link rel="stylesheet" href="./static/style.css">
 </head>
 <body>
-  <div class="background-darken" ></div>
   
   
+  <div class="header-toggle">
+    <span class="material-symbols-outlined" id="header-toggle" tabindex="0">
+      menu
+    </span>
+  </div>
   
-  <header>
-    <nav class="nav-bar josefin-font">
+  <header id="header">
+    <nav class="nav-bar barlow-font">
+      <div class="social-media">
+        <a href="https://facebook.com"> <img src="./images/facebook-svgrepo-com.svg" alt="facebook"> </a>
+        <a href="https://instagram.com"> <img src="./images/instagram-svgrepo-com.svg" alt="instagram"> </a>
+        <a href="https://youtube.com"> <img src="./images/youtube-svgrepo-com.svg" alt="youtube"> </a>
+      </div>
       <img src="./images/rccg-logo.png" alt="rccg-logo" class="logo" id="rccg-logo" tabindex="0">
       <div class="left-nav">
         <div class="nav-item">
@@ -24,11 +33,15 @@
         </div>
         <div class="nav-item">
           <a href="#">Who We Are</a>
-          <div class="nav-dropdown"></div>
+          <div class="nav-dropdown">
+            <a href="#">Our History</a>
+            <a href="#">Mission and Vision</a>
+            <a href="#">Our Beliefs</a>
+          </div>
         </div>
         <div class="nav-item">
           <a href="#">What We Do</a>
-          <div class="nav-dropdown"></div>
+          <!-- <div class="nav-dropdown"></div> -->
         </div>
       </div>
       <div class="right-nav">
@@ -37,11 +50,19 @@
         </div>
         <div class="nav-item">
           <a href="#">Media Resources</a>
-          <div class="nav-dropdown"></div>
+          <div class="nav-dropdown">
+            <a href="https://youtube.com">Youtube</a>
+            <a href="https://instagram.com">Instagram</a>
+            <a href="https://facebook.com">Facebook</a>
+          </div>
         </div>
         <div class="nav-item">
           <a href="#">Quick Links</a>
-          <div class="nav-dropdown"></div>
+          <div class="nav-dropdown">
+            <a href="#">Our Pastor</a>
+            <a href="#">Pay tithe</a>
+            <a href="#">Upcoming Events</a>
+          </div>
         </div>
       </div>
       <span class="material-symbols-outlined" id="panel-open" tabindex="0">
@@ -61,10 +82,10 @@
   </header>
 
   <main class="landing-page section">
-    
+    <div class="background-darken" ></div>
     <div class="main-content">
       <span class="main-subtitle montserrat-font">RCCG</span>
-      <h1 class="main-title barlow-font">Calvary Assembly Ikoyi</h1>
+      <h1 class="main-title">Calvary Assembly Ikoyi</h1>
       <p class="main-body italic">...to make a people prepared for  <span>the Lord</span> - Luke 1:17b</p>
     </div>
   </main>
@@ -87,12 +108,37 @@
   </section>
 
 
-  <script src="./index/logo.js"></script>
-  <script src="./index/side-content.js"></script>
-  <script src="./index/side-panel.js"></script>
-  <script src="./index/navbar.js"></script>
+  <section class="welcome section">
+    <div class="pastor-img">
+      <img src="./images/pst cyril cutout.png" alt="pastor cutout" id="pastor-cutout">
+    </div>
+    <div class="welcome-message">
+      <h1>Welcome To Our Website</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex perferendis voluptas aperiam animi quia ad id nostrum dolorem omnis? Provident tempora repudiandae nemo voluptas maiores libero nihil, animi minima corporis!
+        Rem animi, illo labore odit quam quisquam libero eos adipisci aperiam perspiciatis fugit architecto tenetur optio dolorem delectus magni. Mollitia adipisci beatae voluptatem saepe dolorum eaque sunt nam rerum aut!
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo quas voluptatem sequi vitae quis modi id mollitia perferendis delectus eos atque blanditiis commodi, culpa nulla eligendi vero consequatur, explicabo aperiam!
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore voluptas sit officia, officiis voluptate excepturi, blanditiis, optio iste expedita a repellat in provident nisi accusamus maxime hic esse nihil commodi!
+      </p>
+    </div>
+
+  </section>
+
+  <section class="count-down">
+    <div class="next-service"> Count Down to next service:
+      <span id="days" class="counter"></span><span id="days-tag" class="counter-name">Days</span>
+      <span id="hours" class="counter"></span><span id="hours-tag" class="counter-name">Hours</span>
+      <span id="minutes" class="counter"></span><span id="minutes-tag" class="counter-name">Minutes</span>
+      <span id="seconds" class="counter"></span><span id="seconds-tag" class="counter-name">Seconds</span>
+    </div>
+  </section>
+
+  <script src="./static/side-content.js"></script>
+  <script src="./static/navbar.js"></script>
+  <script src="./static/service-counter.js"></script>
 
 
 
+  
 </body>
 </html>
